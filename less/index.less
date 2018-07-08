@@ -1,0 +1,140 @@
+@import "variable";
+@import "normalize";
+@import "base";
+@import "adapter";
+
+.container {
+  width: 100%;
+  min-width: 320px;
+  max-width: 750px;
+  height: 2000px;
+  background-color: pink;
+  margin: 0 auto;
+  //给父盒子添加padding，刚好是header的高度
+  padding-top: 90rem/@base;
+}
+
+
+//头部
+.sn_header {
+  height: 90rem/@base;
+  width: 100%;
+  max-width: 750px;
+  background-color: @snColor;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+
+  .category,
+  .cart {
+    width: 90rem/@base;
+    height: 90rem/@base;
+    position: absolute;
+    top: 0;
+  }
+  .category {
+    left: 0;
+    background: url(../images/icon_category.png) center center no-repeat;
+    background-size: 44rem/@base 70rem/@base;
+  }
+  .cart {
+    right: 0;
+    background: url(../images/icon_cart.png) center center no-repeat;
+    background-size: 63rem/@base 68rem/@base;
+  }
+
+  .search {
+    height:90rem/@base;
+    margin-left:90rem/@base;
+    margin-right: 90rem/@base;
+    position: relative;
+    input {
+      height: 60rem/@base;
+      width: 100%;
+      //input type= search时，需要添加box-sizing
+      box-sizing: border-box;
+      background-color: rgba(255,255,255,.4);
+      margin-top: 15rem/@base;
+      border-radius: 10px;
+      padding-left:60px;
+      font-size: 24rem/@base;
+    }
+    i {
+      height: 60rem/@base;
+      width: 60rem/@base;
+      position: absolute;
+      top: 15rem/@base;
+      left:0;
+      background: url(../images/icon_search.png) center center no-repeat;
+      background-size: 27rem/@base 28rem/@base;
+    }
+  }
+}
+
+//banner  小圆点修改
+.sn_banner {
+  .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    opacity: 1;
+  }
+  .swiper-pagination-bullet-active {
+    background-color: @snColor;
+  }
+  .swiper-pagination-fraction,
+  .swiper-pagination-custom,
+  .swiper-container-horizontal > .swiper-pagination-bullets {
+    //宽度不能定死
+    width: auto;
+    left:auto;
+    right: 10px;
+  }
+}
+
+
+//导航
+.sn_nav {
+  background-color: #fff;
+  li {
+    float: left;
+    width: 20%;
+    padding-top: 20rem/@base;
+    img {
+      width: 80rem/@base;
+      height: 80rem/@base;
+      display: block;
+      margin: 0 auto;
+    }
+    p {
+      text-align: center;
+      line-height: 50rem/@base;
+      font-size: 24rem/@base;
+    }
+  }
+}
+
+//底部
+
+.sn_footer {
+  width: 100%;
+  max-width: 750px;
+  height: 100rem/@base;
+  background-color: #fff;
+  position: fixed;
+  bottom: 0;
+  li {
+    float: left;
+    width: 20%;
+    padding-top: 10rem/@base;
+    img {
+      width: 50rem/@base;
+      height: 50rem/@base;
+      display: block;
+      margin: 0 auto;
+    }
+    p {
+      text-align: center;
+    }
+  }
+}
